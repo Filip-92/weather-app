@@ -1,0 +1,41 @@
+.bottom-container {
+    -fx-background-color: rgba(44, 74, 102, 0.9);
+}
+
+.days-background {
+    -fx-background-color: #43709A;
+    -fx-background-radius: 50;
+}
+
+TextField {
+    -fx-max-width: 150px;
+}
+
+#country-label {
+    -fx-float: left;
+}
+
+.column_border {
+    -fx-border-style: hidden solid hidden hidden;
+    -fx-border-color: black;
+}
+
+.button {
+    -fx-border-radius: 8px;
+    -fx-background-color: #00004d;
+    -fx-text-fill: white;
+}
+
+#exitButton {
+    -fx-background-color: #b30000;
+}
+
+#changeLanguagePolish {
+    -fx-background-image: url('/img/Flag_of_Poland.png');
+    -fx-background-size: cover;
+}
+
+#changeLanguageEnglish {
+    -fx-background-image: url('/img/Union-jack.jpg');
+    -fx-background-size: cover;
+}
