@@ -183,7 +183,7 @@ public class MainWindowController implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        viewFactory.setMainWindowView(body, timer, date, cityLabel1, cityLabel2, countryLabel1, countryLabel2, errorLabel);
+        viewFactory.setMainWindowView(body, timer, date, cityLabel1, cityLabel2, countryLabel1, countryLabel2, errorLabel, language);
         if(language.equals("polish")) {
             changeLanguagePolish.setStyle("-fx-border-width: 2px;" + "-fx-border-color: lime;" + "-fx-border-insets: -2px;");
         } else {

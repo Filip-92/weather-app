@@ -8,7 +8,8 @@ import java.util.Locale;
 public class CurrentTimeAndDate {
 
     private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
-    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEEE" + ", " + "dd MMMM, yyyy", Locale.ENGLISH);
+    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEEE" + ", " + "dd MMMM, yyyy");
+    private static final DateTimeFormatter dateTimeFormatterEng = DateTimeFormatter.ofPattern("EEEE" + ", " + "dd MMMM, yyyy", Locale.ENGLISH);
 
     private Clock clock;
 
@@ -20,9 +21,12 @@ public class CurrentTimeAndDate {
         return LocalDateTime.now(clock).format(timeFormatter);
     }
 
-    public String currentDate() {
-
-        return LocalDateTime.now(clock).format(dateTimeFormatter);
+    public String currentDate(String language) {
+        if(language.equals("polish"))
+        {
+            return LocalDateTime.now(clock).format(dateTimeFormatter);
+        }
+        return LocalDateTime.now(clock).format(dateTimeFormatterEng);
     }
 
     public LocalDateTime currentDay() {

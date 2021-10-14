@@ -9,6 +9,7 @@ import org.json.JSONException;
 import pl_filippeszke.view.Messages;
 
 import java.time.Clock;
+import java.util.Locale;
 import java.util.Random;
 
 public class MainWindowView {
@@ -33,12 +34,12 @@ public class MainWindowView {
         return n + 1;
     }
 
-    public void setMainWindowView(AnchorPane body, Label date, Label timer, Label cityLabel1,
-                                  Label cityLabel2, Label countryLabel1, Label countryLabel2, Label errorLabel) {
+    public void setMainWindowView(AnchorPane body, Label date, Label timer, Label cityLabel1, Label cityLabel2,
+                                  Label countryLabel1, Label countryLabel2, Label errorLabel, String language) {
         body.setStyle("-fx-background-image: url('/img/background-image" + getRandomImage() + ".jpg');"
                 + "-fx-background-size: cover;");
         timer.setText(currentDate.currentTime());
-        dateDisplay(date);
+        dateDisplay(date, language);
         cityLabel1.setText(citySet1);
         countryLabel1.setText(countrySet1);
         cityLabel2.setText(citySet2);
@@ -46,8 +47,8 @@ public class MainWindowView {
         errorLabel.setText("");
     }
 
-    public Label dateDisplay(Label date) {
-        date.setText(currentDate.currentDate());
+    public Label dateDisplay(Label date, String language) {
+        date.setText(currentDate.currentDate(language));
         return date;
     }
 
