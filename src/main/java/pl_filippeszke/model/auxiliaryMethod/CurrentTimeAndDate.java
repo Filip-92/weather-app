@@ -8,7 +8,7 @@ import java.util.Locale;
 public class CurrentTimeAndDate {
 
     private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
-    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEEE" + ", " + "dd MMMM, yyyy");
+    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEEE" + ", " + "dd MMMM, yyyy", new Locale("pl"));
     private static final DateTimeFormatter dateTimeFormatterEng = DateTimeFormatter.ofPattern("EEEE" + ", " + "dd MMMM, yyyy", Locale.ENGLISH);
 
     private Clock clock;
@@ -33,4 +33,3 @@ public class CurrentTimeAndDate {
         return LocalDateTime.now(clock);
     }
 }
-
