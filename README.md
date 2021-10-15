@@ -1,5 +1,5 @@
 # weather-app
-JavaFX Weather Application
+JavaFX Weather Application -.jar file
 
 ![WeatherApp](https://user-images.githubusercontent.com/75435412/131027548-877bee1a-a291-442b-b124-1b23d5ace607.JPG)
 
