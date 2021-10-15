@@ -42,10 +42,11 @@ public class WeatherManager {
 
     public Map<String, Object> getDailyForecast(double lat, double lon, String language) throws IOException, JSONException {
 
-        String apiString = "https://api.darksky.net/forecast/40c495d946e7f24d0470be483f05d4d6/" + lat + "," + lon + "?lang=pl";
-        if(language.equals("english")) {
-            apiString = "https://api.darksky.net/forecast/40c495d946e7f24d0470be483f05d4d6/" + lat + "," + lon;
+        String apiString = "https://api.darksky.net/forecast/40c495d946e7f24d0470be483f05d4d6/" + lat + "," + lon;
+        if(language.equals(("polish"))) {
+            apiString = apiString + "?lang=pl";
         }
+
         URL url = new URL(apiString);
 
         JSONObject obj = weatherApi.CreatingJsonObject(url);
