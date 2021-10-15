@@ -31,19 +31,17 @@ public class HttpWeatherApi implements WeatherApi {
     public JSONObject returnJsonFromAPI(String city, String language) {
 
         JSONObject json = new JSONObject();
-        String url = "";
-
-        String apiString = "http://api.openweathermap.org/data/2.5/weather?q=" + city +
-                "&appid=" + OPEN_WEATHER_MAP_API_KEY;
+        String lang = "";
 
         if(language.equals("polish")) {
-            url = apiString + "&lang=pl&units=metric";
-        } else {
-            url = apiString + "&units=metric";
+            lang = "&lang=pl";
         }
 
+        String apiString = "http://api.openweathermap.org/data/2.5/weather?q=" + city +
+                "&appid=" + OPEN_WEATHER_MAP_API_KEY + lang + "&units=metric";
+
         try {
-            json = readJsonFromUrl(url);
+            json = readJsonFromUrl(apiString);
         } catch (IOException e) {
             e.printStackTrace();
             return json;
